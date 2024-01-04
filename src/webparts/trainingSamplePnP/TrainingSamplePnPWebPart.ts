@@ -12,6 +12,8 @@ import * as strings from 'TrainingSamplePnPWebPartStrings';
 import TrainingSamplePnP from './components/TrainingSamplePnP';
 import { ITrainingSamplePnPProps } from './components/ITrainingSamplePnPProps';
 
+import { getSP } from '../../common/pnpJsConfig';
+
 export interface ITrainingSamplePnPWebPartProps {
   description: string;
 }
@@ -36,9 +38,10 @@ export default class TrainingSamplePnPWebPart extends BaseClientSideWebPart<ITra
     ReactDom.render(element, this.domElement);
   }
 
-  protected onInit(): Promise<void> {
+  protected async onInit(): Promise<void> {
     return this._getEnvironmentMessage().then(message => {
       this._environmentMessage = message;
+      getSP(this.context);
     });
   }
 
