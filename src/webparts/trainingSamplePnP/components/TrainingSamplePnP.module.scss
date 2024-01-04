@@ -1,0 +1,97 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+:global {
+
+  #workbenchPageContent,
+  .CanvasComponent.LCS .CanvasZone {
+    max-width: 100% !important;
+  }
+}
+
+.trainingSamplePnP {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: "[theme:link, default:#03787c]";
+    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+
+    &:hover {
+      text-decoration: underline;
+      color: "[theme:linkHovered, default: #014446]";
+      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  padding-left: 0;
+  list-style: none;
+
+  &::before {
+    @media screen and (max-width: 768px) {
+      .element {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .timelineEntry {
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  .timelineHeading {
+    color: #000;
+    margin-bottom: .25em;
+    font-size: .78rem;
+  }
+
+  .timelineText {
+    color: #000;
+    font-size: .66rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .timelineContent {
+    position: relative;
+    display: block;
+    margin-left: 0;
+    padding: 1em;
+    background: #e4e3e3;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 1em;
+      left: -1em;
+      border-top: 1em solid transparent;
+      border-bottom: 1em solid transparent;
+      border-right: 1em solid #e4e3e3;
+    }
+  }
+}

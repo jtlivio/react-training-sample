@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-training-sample-client-side-solution",
+    "id": "367b0599-d30d-4c3b-aafd-9b36bb795dc8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": false,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Joao Livio",
+      "websiteUrl": "https://www.titolivio.eu",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Training Sample PnP"
+      },
+      "longDescription": {
+        "default": "A React SPA with a trining sample"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "react-training-sample Feature",
+        "description": "The feature that activates elements of the react-training-sample solution.",
+        "id": "5bea0f13-362b-4b93-a319-500437b0b83d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-training-sample.sppkg"
+  }
+}
