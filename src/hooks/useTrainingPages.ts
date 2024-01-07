@@ -1,15 +1,15 @@
 import { Logger, LogLevel } from "@pnp/logging";
 import { spfi, SPFI } from "@pnp/sp";
 import { useEffect, useState } from "react";
-import { IPage, IPageResponse } from "../interfaces/pages;
+import { IPage, IPageResponse } from "../interfaces/pages";
 import { getSP } from "../common/pnpJsConfig";
 import { Caching } from "@pnp/queryable";
 
 const useTrainingPages = () => {
     const LOG_SOURCE = "PnPLog";
-    const LIBRARY_NAME = "SitePages"
+    const LIBRARY_NAME = "Site Pages"
 
-    const [pages, setPages] = useState<IPage[]>([]);
+    const [trainingPages, setPages] = useState<IPage[]>([]);
     const [isError, setError] = useState<boolean>(false);
 
     const _sp: SPFI = getSP();
@@ -23,29 +23,30 @@ const useTrainingPages = () => {
                 const response: IPageResponse[] = await spCache.web.lists
                     .getByTitle(LIBRARY_NAME)
                     .items.select("Id", "Title", "TrainingArea", "TrainingPageActive", "TrainingAreaPosition")
+                    .orderBy("TrainingAreaPosition", true)
+                    .filter("TrainingPageActive eq 1")
                     ();
 
                 const items: IPage[] = response.map((item: IPageResponse) => {
                     return {
-                        Id: item.ID,
+                        Id: item.Id,
                         Title: item.Title,
-                        TraningArea: item.TrainingArea,
+                        TrainingArea: item.TrainingArea,
                         Active: item.TrainingPageActive,
                         Position: item.TrainingAreaPosition
                     };
                 });
                 setPages(items);
-            } catch (error) {
+            } catch (err) {
                 setError(true);
                 Logger.write(
-                    `${LOG_SOURCE} (getting files useEffect) - ${JSON.stringify(error)} - `,
-                    LogLevel.Error
+                `${LOG_SOURCE} (getting files useEffect) - ${JSON.stringify(err)} - `, LogLevel.Error
                 );
             }
         })();
     }, []);
 
-    return [pages, isError]
-}
+    return [trainingPages, isError] as const
+};
 
 export default useTrainingPages
