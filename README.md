@@ -2,7 +2,7 @@
 
 ## Summary
 
-Let's imagine you want to provide a Training Path to your users tagging a page in the Site Pages List, so your user create a Site Page normaly tagging with a choice column wich are of training bellongs. This WebPart gives you an ideia to implement the active page you are in, folowing a simple timeline.
+Imagine providing a Training Path to users by tagging a Site Page with a choice column indicating its relevant training. This WebPart suggests a way to implement the current active page, guided by a straightforward timeline.
 
 ![Here](./src/webparts/trainingSamplePnP/assets/demo.gif)
 
