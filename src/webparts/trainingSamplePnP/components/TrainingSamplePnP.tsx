@@ -21,7 +21,7 @@ const TrainingSamplePnP: React.FC<ITrainingSamplePnPProps> = (props) => {
                     return (
                         <ol className={styles.timeline}>
                             <li key={idx} className={styles.timelineEntry}>
-                                <div className={styles.timelineContent}>
+                                <div className={currentPageUrl === page.Name ? styles.timelineContentActive : styles.timelineContent}>
                                     <h2 className={styles.timelineHeading}>{page.Title}</h2>
                                     <p className={styles.timelineText}>{page.TrainingArea} - </p>
                                 </div>

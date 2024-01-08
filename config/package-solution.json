@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-training-sample-client-side-solution",
     "id": "367b0599-d30d-4c3b-aafd-9b36bb795dc8",
-    "version": "1.0.0.1",
+    "version": "1.0.0.2",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": false,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "react-training-sample Feature",
         "description": "The feature that activates elements of the react-training-sample solution.",
         "id": "5bea0f13-362b-4b93-a319-500437b0b83d",
-        "version": "1.0.0.1"
+        "version": "1.0.0.2"
       }
     ]
   },
