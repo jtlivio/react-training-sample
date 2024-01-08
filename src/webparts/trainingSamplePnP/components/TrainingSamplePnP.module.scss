@@ -59,6 +59,7 @@
   .timelineEntry {
     margin-bottom: 1em;
     color: #fff;
+    height: 5em;
   }
 
   .timelineHeading {
@@ -82,17 +83,6 @@
     margin-left: 0;
     padding: 1em;
     background: #e4e3e3;
-
-    &:before {
-      content: "";
-      position: absolute;
-      display: block;
-      top: 1em;
-      left: -1em;
-      border-top: 1em solid transparent;
-      border-bottom: 1em solid transparent;
-      border-right: 1em solid #e4e3e3;
-    }
   }
 
   .timelineContentActive {
@@ -110,7 +100,7 @@
       left: -1em;
       border-top: 1em solid transparent;
       border-bottom: 1em solid transparent;
-      border-right: 1em solid #e4e3e3;
+      border-right: 1em solid #e1ede3;
     }
   }
 }
