@@ -6,10 +6,12 @@ import useTrainingPages from "../../../hooks/useTrainingPages"
 
 export default function timeline() {
     const [trainingPages, isError] = useTrainingPages();
+    let currentPageUrl = this.context.pageContext.site.serverRequestPath;
     console.log(trainingPages);
     if (!isError) {
         return (
             <div>
+                <h1>{currentPageUrl}</h1>
                 {trainingPages.map((page, idx) => {
                     return (
                         <ol className={styles.timeline}>

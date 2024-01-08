@@ -4,6 +4,7 @@ export interface IPage {
     TrainingArea: string;
     Active: boolean;
     Position: number;
+    Name: string
 }
 
 export interface IPageResponse {
@@ -12,4 +13,5 @@ export interface IPageResponse {
     TrainingArea: string;
     TrainingPageActive: boolean;
     TrainingAreaPosition: number;
+    FileLeafRef: string;
 }

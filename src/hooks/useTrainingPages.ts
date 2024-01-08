@@ -22,7 +22,7 @@ const useTrainingPages = () => {
 
                 const response: IPageResponse[] = await spCache.web.lists
                     .getByTitle(LIBRARY_NAME)
-                    .items.select("Id", "Title", "TrainingArea", "TrainingPageActive", "TrainingAreaPosition")
+                    .items.select("Id", "Title", "TrainingArea", "TrainingPageActive", "TrainingAreaPosition", "FileLeafRef")
                     .orderBy("TrainingAreaPosition", true)
                     .filter("TrainingPageActive eq 1")
                     ();
@@ -33,7 +33,9 @@ const useTrainingPages = () => {
                         Title: item.Title,
                         TrainingArea: item.TrainingArea,
                         Active: item.TrainingPageActive,
-                        Position: item.TrainingAreaPosition
+                        Position: item.TrainingAreaPosition,
+                        Name: item.FileLeafRef
+
                     };
                 });
                 setPages(items);

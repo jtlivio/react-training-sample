@@ -1,12 +1,15 @@
-import { WebPartContext } from "@microsoft/sp-webpart-base";
+import { WebPartContext } from '@microsoft/sp-webpart-base';
 
-// import pnp and pnp logging system
-import { spfi, SPFI, SPFx } from "@pnp/sp";
-import { LogLevel, PnPLogging } from "@pnp/logging";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/batching";
+import { LogLevel, PnPLogging } from '@pnp/logging';
+import { spfi, SPFI, SPFx} from '@pnp/sp';
+import '@pnp/sp/items';
+import '@pnp/sp/lists';
+import '@pnp/sp/webs';
+import '@pnp/sp/profiles';
+import '@pnp/sp/fields';
+import '@pnp/sp/batching';
+import "@pnp/graph/users";
+
 
 var _sp: SPFI | null = null;
 
@@ -18,3 +21,5 @@ export const getSP = (context?: WebPartContext): SPFI => {
   }
   return _sp!;
 };
+
+
