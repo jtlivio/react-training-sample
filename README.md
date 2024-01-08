@@ -1,4 +1,4 @@
-# SPFX WebPart allow  simulate the page active 
+# SPFX WebPart providing an indicator to users by tagging the current Site Page 
 
 ## Summary
 
